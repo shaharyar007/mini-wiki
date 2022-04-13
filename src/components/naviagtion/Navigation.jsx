@@ -1,10 +1,9 @@
 import React, { useContext} from 'react';
 import { Link } from 'react-router-dom';
-import { List, ListItem, ListItemText } from "@material-ui/core";
+import { List, ListItem, ListItemText } from "@mui/material";
 import NightlightRoundedIcon from '@mui/icons-material/NightlightRounded';
 import AutoStoriesRoundedIcon from '@mui/icons-material/AutoStoriesRounded';
-import PropTypes from 'prop-types';
-import {AppBar,Box,CssBaseline,Divider ,Drawer,Tooltip ,IconButton,ListItemIcon,Typography,Toolbar} from '@mui/material';
+import {AppBar,Box,CssBaseline,Divider,Drawer,Tooltip ,IconButton,ListItemIcon,Typography,Toolbar} from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -13,8 +12,6 @@ import DarkLogo  from "../../dark-logo.svg";
 import { ColorModeContext } from '../../ColorContext';
 import { userContext } from '../../UserContext/UserContext';
 import ProfileMenu from './ProfileMenu';
-
-
 
 const sidebarWidth = 260;
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
@@ -31,7 +28,6 @@ const Navigation = (props) => {
     setMobileOpen(!mobileOpen);
   };
 
-
   const drawer = (
     <div>
       <Toolbar>
@@ -41,7 +37,6 @@ const Navigation = (props) => {
       </Toolbar>
       <Divider />
       <List>
-        
           <ListItem sx={{ px: 5  }} button aria-label="dashboard" component={Link} to="/">
                <ListItemIcon sx={{ justifyContent:'center' }}>
                <DashboardIcon color='secondary'  fontSize="medium"/>
@@ -75,7 +70,6 @@ const Navigation = (props) => {
         sx={{
           width: { sm: `calc(100% - ${sidebarWidth}px)` },
           ml: { sm: `${sidebarWidth}px` },
-          // bgcolor: "#363740"
         }}
       >
         <Toolbar>
@@ -108,7 +102,6 @@ const Navigation = (props) => {
         sx={{ width: { sm: sidebarWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
        
         <Drawer
           container={container}
@@ -136,19 +129,11 @@ const Navigation = (props) => {
           open
         >
           {drawer}
-        </Drawer>
+        </Drawer> 
       </Box>
     
     </Box>
   );
 }
-
-Navigation.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
 
 export default Navigation;
